@@ -32,7 +32,7 @@ export default function Home() {
             name="url"
             defaultValue={url}
             onChange={(e) => setUrl(e.currentTarget.value)}
-            className="bg-zinc-200 w-full p-2 text-zinc-800 rounded peer"
+            className="bg-zinc-200 w-full p-2 text-zinc-800 peer"
           />
           <span className="invisible peer-invalid:visible w-full text-red-500">
             Invalid url {url}
@@ -40,13 +40,13 @@ export default function Home() {
         </label>
         <label className="block w-full">
           <span className="text-sm block"> Zeroed URL</span>
-          <div className="flex flex-row rounded overflow-hidden">
+          <div className="flex flex-row overflow-hidden">
             <input
               type="url"
               disabled
               name="url"
               value={encoded}
-              className="bg-zinc-200 w-full p-2 text-zinc-800"
+              className="w-full p-2 bg-zinc-900 text-sky-300 border border-sky-500"
             />
             <button
               className="bg-sky-600 text-zinc-900 px-1"
