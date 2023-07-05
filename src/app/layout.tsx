@@ -1,7 +1,7 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { IBM_Plex_Mono } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const ibm = IBM_Plex_Mono({weight: ["400"], subsets: ["latin"]})
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +15,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${ibm.className} bg-zinc-900 w-screen h-screen text-sky-300`}>
+        <div className='container mx-auto w-full'> {children}</div></body>
     </html>
   )
 }
