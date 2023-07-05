@@ -52,7 +52,7 @@ export default function Home() {
               className="bg-sky-600 text-zinc-900 px-1"
               onClick={(e) => {
                 e.preventDefault();
-                navigator.clipboard.writeText(url).catch(() => {});
+                navigator.clipboard.writeText(encoded).catch(() => {});
                 setCopied(true);
                 setTimeout(() => {
                   setCopied(false);
