@@ -4,6 +4,7 @@ import { encode } from "@/utils/zer";
 
 export default function Home() {
   const [url, setUrl] = useState("https://");
+  const [copied, setCopied] = useState(false);
   const encoded =
     new URL(
       `/`,
@@ -52,10 +53,13 @@ export default function Home() {
               onClick={(e) => {
                 e.preventDefault();
                 navigator.clipboard.writeText(url).catch(() => {});
+                setCopied(true);
+                setTimeout(() => {
+                  setCopied(false);
+                }, 600);
               }}
             >
-              {" "}
-              Copy{" "}
+              {copied ? "Copied" : "Copy"}
             </button>
           </div>
         </label>
