@@ -5,8 +5,10 @@ import { encode } from "@/utils/zer";
 export default function Home() {
   const [url, setUrl] = useState("https://");
   const encoded =
-    new URL(`/`, new URL((globalThis as any).window?.location.href)).href +
-    encode(url);
+    new URL(
+      `/`,
+      new URL((globalThis as any).window?.location.href || "http://foo.com")
+    ).href + encode(url);
   return (
     <main className="flex flex-col">
       <section className="flex flex-col text-center">
